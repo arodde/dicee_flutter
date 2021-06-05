@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -24,14 +25,30 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 1;
+  // Random random = Random(7);
   int rightDiceNumber = 1;
   int diceUpper(int dice) {
+    /**
+     * increments dice value of 1,
+     * if the value is greater than 6,
+     * the value 1 is given as diceValue.
+     */
     dice++;
     if (dice > 6) {
       dice = 1;
     }
-
     return dice;
+  }
+
+  int milestoneDice() {
+    /**
+     * this function ensures the dice value is between 1 and 6
+     */
+    int diceValue = 0;
+    // while (diceValue < 1 || diceValue > 6) {
+    diceValue = 1 + Random().nextInt(6) as int;
+    // }
+    return diceValue;
   }
 
   @override
@@ -45,7 +62,7 @@ class _DicePageState extends State<DicePage> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    leftDiceNumber = diceUpper(leftDiceNumber);
+                    leftDiceNumber = milestoneDice();
                     print("leftDiceNumber = $leftDiceNumber");
                   });
                 },
@@ -61,7 +78,7 @@ class _DicePageState extends State<DicePage> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    rightDiceNumber = diceUpper(rightDiceNumber);
+                    rightDiceNumber = milestoneDice();
                     print("rightDiceNumber = $rightDiceNumber");
                   });
                 },
