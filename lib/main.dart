@@ -69,20 +69,9 @@ class _DicePageState extends State<DicePage> {
     return Center(
       child: Row(
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  changeDiceFace();
-                },
-                child: Image(
-                  image: AssetImage('images/dice$leftDiceNumber.png'),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
+          buildedExpanded(context, leftDiceNumber),
+          buildedExpanded(context, rightDiceNumber),
+          /*Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
@@ -94,53 +83,26 @@ class _DicePageState extends State<DicePage> {
                 ),
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );
   }
-}
-/*
 
-class DicePage extends StatelessWidget {
-  int leftDiceNumber = 1;
-  int rightDiceNumber = 1;
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  print("bouton gauche pressé");
-                  leftDiceNumber += 1;
-                },
-                child: Image(
-                  image: AssetImage('images/dice$leftDiceNumber.png'),
-                ),
-              ),
-            ),
+  Widget buildedExpanded(BuildContext context, int diceNumber) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextButton(
+          onPressed: () {
+            changeDiceFace();
+          },
+          child: Image(
+            image: AssetImage('images/dice$diceNumber.png'),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  print("bouton droit pressé");
-                  rightDiceNumber += 1;
-                },
-                child: Image(
-                  image: AssetImage('images/dice$rightDiceNumber.png'),
-                ),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
-*/
