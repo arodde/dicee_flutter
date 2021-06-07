@@ -51,6 +51,19 @@ class _DicePageState extends State<DicePage> {
     return diceValue;
   }
 
+  void changeDiceFace() {
+    /**
+     * This function throws two dice set display their random values.
+     */
+
+    setState(() {
+      leftDiceNumber = milestoneDice();
+      rightDiceNumber = milestoneDice();
+      print("leftDiceNumber = $leftDiceNumber");
+      print("rightDiceNumber = $rightDiceNumber");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -61,10 +74,7 @@ class _DicePageState extends State<DicePage> {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    leftDiceNumber = milestoneDice();
-                    print("leftDiceNumber = $leftDiceNumber");
-                  });
+                  changeDiceFace();
                 },
                 child: Image(
                   image: AssetImage('images/dice$leftDiceNumber.png'),
@@ -77,10 +87,7 @@ class _DicePageState extends State<DicePage> {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 onPressed: () {
-                  setState(() {
-                    rightDiceNumber = milestoneDice();
-                    print("rightDiceNumber = $rightDiceNumber");
-                  });
+                  changeDiceFace();
                 },
                 child: Image(
                   image: AssetImage('images/dice$rightDiceNumber.png'),
