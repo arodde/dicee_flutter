@@ -5,7 +5,7 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey.shade900,
         appBar: AppBar(
           title: Text('Dicee'),
           backgroundColor: Colors.red,
@@ -69,8 +69,9 @@ class _DicePageState extends State<DicePage> {
     return Center(
       child: Row(
         children: [
-          buildedExpanded(context, leftDiceNumber),
-          buildedExpanded(context, rightDiceNumber),
+          buildedExpanded(context, leftDiceNumber, Colors.blue.shade400),
+          buildedExpanded(context, rightDiceNumber, Colors.white),
+          buildedExpanded(context, rightDiceNumber, Colors.red.shade400),
           /*Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -90,16 +91,17 @@ class _DicePageState extends State<DicePage> {
   }
 
   @override
-  Widget buildedExpanded(BuildContext context, int diceNumber) {
+  Widget buildedExpanded(BuildContext context, int diceNumber, Color myColor) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(2.0),
         child: TextButton(
           onPressed: () {
             changeDiceFace();
           },
           child: Image(
             image: AssetImage('images/dice$diceNumber.png'),
+            color: myColor,
           ),
         ),
       ),
