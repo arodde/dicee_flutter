@@ -25,6 +25,7 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 1;
+  int centerDiceNumber = 1;
   // Random random = Random(7);
   int rightDiceNumber = 1;
   int diceUpper(int dice) {
@@ -58,8 +59,10 @@ class _DicePageState extends State<DicePage> {
 
     setState(() {
       leftDiceNumber = milestoneDice();
+      centerDiceNumber = milestoneDice();
       rightDiceNumber = milestoneDice();
       print("leftDiceNumber = $leftDiceNumber");
+      print("centerDiceNumber = $centerDiceNumber");
       print("rightDiceNumber = $rightDiceNumber");
     });
   }
@@ -70,21 +73,8 @@ class _DicePageState extends State<DicePage> {
       child: Row(
         children: [
           buildedExpanded(context, leftDiceNumber, Colors.blue.shade400),
-          buildedExpanded(context, rightDiceNumber, Colors.white),
+          buildedExpanded(context, centerDiceNumber, Colors.white),
           buildedExpanded(context, rightDiceNumber, Colors.red.shade400),
-          /*Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {
-                  changeDiceFace();
-                },
-                child: Image(
-                  image: AssetImage('images/dice$rightDiceNumber.png'),
-                ),
-              ),
-            ),
-          ),*/
         ],
       ),
     );
