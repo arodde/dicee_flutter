@@ -1,4 +1,12 @@
+# context : 
+
+Je fais ce projet dans le cadre d'une formation de Flutter pour me former à cette technologie.
+Il s'agit de sélectionner la bonne réponse à la question posée. 
+J'ai laissé ici le texte original (anglais)
+
 # dicee_flutter
+
+
 
 A new Flutter project.
 
