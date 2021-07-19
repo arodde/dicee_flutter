@@ -1,8 +1,7 @@
 # context : 
 
 Je fais ce projet dans le cadre d'une formation de Flutter pour me former à cette technologie.
-Il s'agit de sélectionner la bonne réponse à la question posée. 
-J'ai laissé ici le texte original (anglais)
+Il s'agit ici de représenter un lancer de dés. C'est ainsi qu'est introduite la distinction entre les classes StateLessWidget et StateFulWidget.
 
 # dicee_flutter
 
